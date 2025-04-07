@@ -19,6 +19,7 @@ func timeIn(zone string) (time.Time, error) {
 }
 
 func main() {
+
 	tz := "Europe/Wonderland"
 
 	t, err := timeIn(tz)
@@ -26,6 +27,5 @@ func main() {
 		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
-
 	fmt.Println("Current time in", tz, "is", t)
 }
