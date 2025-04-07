@@ -7,13 +7,14 @@ import (
 	"time"
 )
 
+// Takes a string parameter `zone` which represents the name of the time zone.
+// If the time zone cannot be found, it returns an empty time.Time value and an error.
 func timeIn(zone string) (time.Time, error) {
 	location, err := time.LoadLocation(zone)
 	if err != nil {
-		return time.Time{}, err // Return zero value of time.Time and the error
-		//panic(err) // Panic if the location cannot be loaded
+		return time.Time{}, err
+		//panic(err) // Panic if the location cannot be found
 	}
-
 	return time.Now().In(location), nil
 }
 
